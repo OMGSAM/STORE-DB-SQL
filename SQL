@@ -1,0 +1,25 @@
+ CREATE   table clients (
+   id_client  VARCHAR PRIMARY KEY ,
+   nom VARCHAR,
+   prenom VARCHAR
+   telephone INT ,
+  email VARCHAR ,
+   adresse VARCHAR 
+   ) ;
+    CREATE   table produits (
+   id_produit  VARCHAR PRIMARY KEY ,
+   nom VARCHAR,
+   description VARCHAR
+   prix INT ,
+  stock VARCHAR 
+    
+   ) ;
+    CREATE   table commandes (
+   id_commande  VARCHAR PRIMARY KEY ,
+    FOREIGN KEY id_client   REFERENCES  clients (id_client) ,
+
+   date_commande date,
+   statut VARCHAR  default 'en cours ' check statut in ('en cours ','livré','annulé') ,
+   total INT 
+  
+   ) ;
