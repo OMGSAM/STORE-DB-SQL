@@ -1,5 +1,5 @@
  CREATE   table clients (
-   id_client  VARCHAR PRIMARY KEY ,
+   id_client  INT PRIMARY KEY  AUTO_INCREMENT,
    nom VARCHAR,
    prenom VARCHAR
    telephone INT ,
@@ -7,7 +7,7 @@
    adresse VARCHAR 
    ) ;
     CREATE   table produits (
-   id_produit  VARCHAR PRIMARY KEY ,
+   id_produit  INT PRIMARY KEY  AUTO_INCREMENT ,
    nom VARCHAR,
    description VARCHAR
    prix INT ,
@@ -15,7 +15,7 @@
     
    ) ;
     CREATE   table commandes (
-   id_commande  VARCHAR PRIMARY KEY ,
+   id_commande  INT PRIMARY KEY ,
     FOREIGN KEY id_client   REFERENCES  clients (id_client) ,
 
    date_commande date,
